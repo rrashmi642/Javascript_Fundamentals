@@ -1,0 +1,70 @@
+//---------------------DOM stands for Document object model-------------
+//The DOM represents the structure of a web page i.e HTML as a tree of objects (also called nodes). JavaScript can use the DOM to access, change, add, or remove parts of a webpage dynamically.
+
+<!DOCTYPE html>
+<html>
+  <head><title>DOM</title>
+  <style>
+    .randomNoContainer{
+     height: 100px;
+     width: 40%;
+     border: 2px solid red;
+     margin: 15px;
+     padding: 50px;
+     text-align: center;
+     color: chartreuse;
+     font-size: 100px;
+    }
+  </style></head>
+
+  <body>
+    <h1 id="Heading">DOM</h1>
+    <ul>
+      <li>DOM 1</li>
+      <li>DOM 2</li>
+      <li>DOM 3</li>
+      <li>DOM 4</li>
+    </ul>
+    <div class="parent">
+      <p>Visit the below link</p>
+      <a id="link" href="https://www.youtube.com"> Youtube</a>
+    </div>
+
+    <div class="randomNoContainer"></div>
+    <button class="randomButton">Show random no.</button>
+
+    <p>the entire html can be accesed useing key #document</p>
+    <button onclick="cclick();">Click me</button>
+    <button id="btn">Click You</button>
+    <script>
+       document.children[0].children[1].children[2].children[2].textContent="Updated DOM 2 to DOM 5"  
+
+
+      //  <!--when object tree gets complex it is difficult to access elements using above way so we use DOM methods to access element by giving unique identifier like lass, id or tag -->
+       document.getElementById('Heading'). textContent="Heading";
+       document.getElementById('link').href="https://www.Google.com"
+        document.querySelector('.parent #link'); //used to  read any element inside querySelector css selecter is passed inside
+
+
+       function cclick(){
+          alert("You clicked me");
+       }
+
+       //where also button    eventlsitener   which event   what function 
+       btn.addEventListener('click', function(event){
+        cclick();
+       })
+//  add random numbers to container
+      function showRandomNo(){
+        const divref= document.querySelector('.randomNoContainer');
+        divref.textContent = Math.floor(Math.random()*10);
+       }
+      
+       const btnref=document.querySelector('.randomButton');
+       btnref.addEventListener('click', function(event){
+        showRandomNo();
+       });
+    </script>
+  </body>
+</html>
+ 

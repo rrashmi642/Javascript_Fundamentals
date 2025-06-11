@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <body>
+       <div>
+        <span class="var1">5</span>
+        <span class="operator">+</span>
+        <span class="var2">7</span>
+        <span>=</span>
+        <span class="result">--</span>
+       </div> 
+        
+        <button>Calculate</button>
+
+        <script>
+            const btnref=document.querySelector('button');
+            const opref=document.querySelector('.operator');
+            const v1ref=document.querySelector('.var1');
+            const v2ref=document.querySelector('.var2');
+            const resref= document.querySelector('.result');
+    
+        
+               btnref.addEventListener('click', function (event) {
+                const num1 = Number(v1ref.textContent);
+                const num2 = Number(v2ref.textContent);
+
+
+               switch (opref.textContent){
+                case '*': 
+                resref.textContent= v1ref.textContent * v2ref.textContent;
+                break;
+
+                case '+': 
+                resref.textContent= num1 + num2;
+                break;
+
+                case '-': 
+                resref.textContent= num1 - num2;
+                break;
+
+                case '/': 
+                resref.textContent= num1 /  num2;
+                break;
+               }
+               });
+
+
+        </script>
+    </body>
+</html>

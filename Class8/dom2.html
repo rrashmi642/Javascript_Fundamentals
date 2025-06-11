@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM</title>
+  <style>
+    .randomNoContainer {
+      height: 100px;
+      width: 40%;
+      border: 2px solid red;
+      margin: 15px;
+      padding: 50px;
+      text-align: center;
+      color: chartreuse;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="Heading">DOM</h1>
+
+  <ul>
+    <li>DOM 1</li>
+    <li>DOM 2</li>
+    <li>DOM 3</li>
+    <li>DOM 4</li>
+  </ul>
+
+  <div class="parent">
+    <p>Visit the below link</p>
+    <a id="link" href="https://www.youtube.com">Youtube</a>
+  </div>
+
+  <!-- ✅ Random Number Output -->
+  <div class="randomNoContainer">?</div>
+  <button class="randomButton">Show random no.</button>
+
+  <p>The entire HTML can be accessed using key #document</p>
+  <button onclick="cclick();">Click me</button>
+  <button id="btn">Click You</button>
+
+  <!-- ✅ SCRIPT -->
+  <script>
+    // Changing text content and link using DOM
+    document.getElementById('Heading').textContent = "Heading";
+    document.getElementById('link').href = "https://www.google.com";
+
+    // Alert on button click
+    function cclick() {
+      alert("You clicked me");
+    }
+
+    document.getElementById('btn').addEventListener('click', cclick);
+
+    // ✅ Random number generation and showing in the container
+    function showRandomNo() {
+      const divref = document.querySelector('.randomNoContainer');
+      divref.textContent = Math.floor(Math.random() * 10);  // 0 to 9
+    }
+
+    const btnref = document.querySelector('.randomButton');
+    btnref.addEventListener('click', showRandomNo);
+  </script>
+</body>
+</html>

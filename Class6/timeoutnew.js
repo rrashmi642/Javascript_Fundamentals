@@ -12,6 +12,8 @@ function createTimeoutpromise(delay,message){
     
 })
 }
+
+//Below is the ES5 way of writing promise chaining where promises execute in parallel way, whichever takes less time executes first
 createTimeoutpromise(7000, '7sec').then((data)=>{console.log(data);}).catch((err)=>{console.log(err);})
 createTimeoutpromise(4000, '4sec').then((data)=>{console.log(data);}).catch((err)=>{console.log(err);})
 createTimeoutpromise(1000, '1sec').then((data)=>{console.log(data);}).catch((err)=>{console.log(err);})
