@@ -11,9 +11,10 @@
     .heading, .filter{
         display: flex;
         justify-content: center;
+    
 
     }
-
+   
     .filter{
         padding: 10px;
     }
@@ -32,6 +33,7 @@
         height: 100px;
         width: 200px;
         height: 200px;
+        position: relative;
         /* margin: 15px; */
 
     }
@@ -49,6 +51,17 @@
         padding: 10px;
         align-items: center;
         justify-content: center;
+    }
+    .movie-delete-icon{
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: gray;
+        border: 1px solid black;
+       text-align: center;
     }
 
     .movie-price{
@@ -77,30 +90,37 @@
             <option>Action</option>
             <option>Horror</option>
             <option>Comedy</option>
-        </select>
+            </select>
+            <button id="button">Delete all</button>
         </div>
+        
         
         <div class="movies">
             <div class="movie" data-genre ="Action">
+                <div class="movie-delete-icon">X</div>
                 <div class="movie-title" >Action: Movie 1</div>
                 <div class="movie-price">Rs. 100</div>
             </div>
             <div class="movie" data-genre ="Comedy">
+                <div class="movie-delete-icon">X</div>
                 <div class="movie-title" >Comedy: Movie 2</div>
                 <div class="movie-price">Rs. 150</div>
             </div>
 
 
             <div class="movie" data-genre ="Horror">
+                <div class="movie-delete-icon">X</div>
                 <div class="movie-title" >Horror: Movie 3</div>
                 <div class="movie-price">Rs. 200</div>
             </div>
 
             <div class="movie" data-genre ="Action">
+                <div class="movie-delete-icon">X</div>
                 <div class="movie-title" >Action: Movie 4</div>
                 <div class="movie-price">Rs. 200</div>
             </div>
             <div class="movie" data-genre ="Horror">
+                <div class="movie-delete-icon">X</div>
                 <div class="movie-title" >Horror: Movie 5</div>
                 <div class="movie-price">Rs. 200</div>
             </div>

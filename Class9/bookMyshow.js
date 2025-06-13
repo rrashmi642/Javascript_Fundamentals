@@ -1,5 +1,8 @@
 const selectRef = document.querySelector('.filter select');
 const allMoviesRef=document.querySelectorAll('.movie');
+const alldeleteicons=document.querySelectorAll('.movie-delete-icon');
+const removeAllButtonRef=document.querySelector('.filter button')
+const moviesContainerRef=document.querySelector('.movies');
 
 selectRef.addEventListener('change', function (event){
     allMoviesRef.forEach(movieRef => {
@@ -12,4 +15,15 @@ selectRef.addEventListener('change', function (event){
        
     })
 });
+
+alldeleteicons.forEach(iconRef =>{
+    iconRef.addEventListener('click', function(event){
+        event.target.closest('.movie')?.remove();
+    }
+)
+})
+
+removeAllButtonRef.addEventListener('click', function(e){
+moviesContainerRef.innerHTML = '';
+})
 

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <button type="button">Double Click</button>
+    <script>
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            }
+            else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+        document.querySelector('button').addEventListener('dblclick', function (event) {
+            toggleFullScreen();
+        })
+    </script>
+</body>
+
+</html>
