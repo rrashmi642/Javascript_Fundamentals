@@ -6,7 +6,7 @@ const isHead = new Promise(function (resolve, reject) {
 });
 
 function TossES5() {
-  //using promise chaining as per ES5 but we can make code mor readable using async await
+  //using promise chaining as per ES5 but we can make code more readable using async await
   console.log("A");
   isHead
     .then((data) => {
