@@ -34,7 +34,17 @@
 
         }
 
-        .actions .create-icon {
+        /* .actions .create-icon {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            align-items: center;
+
+            background-color: black;
+
+        } */
+
+        .header .actions .icons{
             width: 40px;
             height: 40px;
             text-align: center;
@@ -44,11 +54,26 @@
 
         }
 
+        .header .actions .icons:hover{
+            background-color: #3f3d3d;
+        }
+        
+
         .task {
             background-color: rgb(127, 255, 212);
             position: relative;
             height: 200px;
             width: 200px;
+        }
+        .task-content{
+            height: 140px;
+            width: 200px;
+        }
+         .task-content textarea{
+            background: transparent;
+            border: none;
+            height: 100%;
+            width: 100%;
         }
 
         .task-modal {
@@ -87,6 +112,10 @@
             text-align: center;
 
 
+        }
+
+        .task-modal .left-section .close:hover{
+            background-color: red;
         }
 
         .task-modal .left-section {
@@ -149,12 +178,18 @@
             display: none;
         }
 
-        .non-editable .task-delete-icon{
+        .noneditable .task-delete-icon{
             display: none;
         }
 
+        .noneditable .task-content textarea{
+            pointer-events: none;
+        }
+        
+
         .selected {
-            border: 5px solid white;
+            border: 5px solid rgb(255, 255, 255);
+            color: rgb(125, 194, 190);
         }
 
         .header .filters{
@@ -186,14 +221,15 @@
         </div>
 
         <div class="actions">
-            <div class="create-icon">+</div>
+            <div class="create-icon icons">+</div>
+            <div class="disable-icon icons"><i class="fa-solid fa-lock"></i></div>
         </div>
 
 
         <!-- task-modal -->
         <div class="task-modal hide">
             <div class="left-section">
-                <div class="close">X</div>
+                <div class="close">x</div>
                 <textarea></textarea>
             </div>
 
