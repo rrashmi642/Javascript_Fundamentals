@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Please NOTE that the link to assets (like images) need to be set in global context.
+For example:
+To access an image from assets folder correct way to set src attribute is 
+
+src = 'profile.png'
+
+instead of 
+
+src = './assets/profile.png'
+-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Management App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <!-- TOOL BOX ELEMENTS -->
+    <div class="toolbox-cont">
+        <div class="toolbox-priority-cont">
+            <div class="lightpink color"></div>
+            <div class="lightgreen color"></div>
+            <div class="lightblue color"></div>
+            <div class="black color"></div>
+        </div>
+
+
+    </div>
+
+    <!-- MAIN CONTAINER - Tickets holder -->
+    <div class="main-cont">
+        <!-- <div class="ticket-cont">
+            <div class="ticket-color"></div>
+            <div class="ticket-id">id 1</div>
+            <div class="task-area"> this  is task 1</div>
+            <div class="ticket-lock">
+              <i class="fa-solid fa-lock"></i>
+           </div> -->
+    </div>
+    </div>
+
+    <!-- MODAL - Ticket generator window -->
+    <div class="modal-cont">
+
+        <textarea class="textArea-cont" placeholder="Enter Your Task" spellcheck="false">
+
+       </textarea>
+
+
+        <div class="priority-colors-container">
+            <div class="lightpink priority-color"></div>
+            <div class="lightgreen priority-color"></div>
+            <div class="lightblue priority-color"></div>
+            <div class="black priority-color active"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Write your solution here =====================================================
+//    Task 1:
+// Whenever a particular color is clicked from the toolbox =>
+// 1.1 Remove all the existing tickets from Document.
+// 1.2 Only the tickets with the assigned priority colors should be added to the Document.
+
+// const colorFiltersRef = document.querySelectorAll('.color');
+// const maincontRef = document.querySelector('.main-cont');
+
+// colorFiltersRef.forEach(colorElem =>{
+//     const selectedColor = colorElem.classList[0];
+
+//     colorElem.addEventListener('click', function(e){
+//         removeAllTickets();
+//         const filterTickets = ticketsArr.filter(ticket => ticketColor === selectedColor)
+//   filterTickets.forEach(ticket =>{
+//      createTicket(ticket.ticketTask, ticket.ticketColor,ticket.ticketID);
+//   });
+  
+//     });
+
+//   colorElem.addEventListener('dblclick', function(e){
+//       removeAllTickets();
+
+//       ticketsArr.forEach(ticket=>{
+//        createTicket(ticket.ticketTask, ticket.ticketColor,ticket.ticketID);
+//       });
+//   });
+// });
+
+// function removeAllTickets(){
+//     maincontRef.forEach(ticket =>{
+//         ticket.remove();
+//     });
+// }
+   
+const colorFilters = document.querySelectorAll('.color');
+const mainCont = document.querySelector('.main-cont');
+
+// Filter by color on click
+colorFilters.forEach(colorElem => {
+  const selectedColor = colorElem.classList[0]; // e.g., 'lightpink'
+
+  // Task 1: Click = Filter by color
+  colorElem.addEventListener('click', () => {
+    removeAllTickets();
+
+    const filteredTickets = ticketsArr.filter(ticket => ticket.ticketColor === selectedColor);
+    filteredTickets.forEach(ticket => {
+      createTicket(ticket.ticketTask, ticket.ticketColor, ticket.ticketID);
+    });
+  });
+
+  // Task 2: Double-click = Show all tickets
+  colorElem.addEventListener('dblclick', () => {
+    removeAllTickets();
+
+    ticketsArr.forEach(ticket => {
+      createTicket(ticket.ticketTask, ticket.ticketColor, ticket.ticketID);
+    });
+  });
+});
+
+// Utility to remove all current tickets from DOM
+function removeAllTickets() {
+  const tickets = document.querySelectorAll('.ticket-cont');
+  tickets.forEach(ticket => ticket.remove());
+}
+    </script>
+
+
+
+</body>
+
+</html>
